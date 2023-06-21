@@ -20,11 +20,11 @@
 
 - http://localhost:3000/api
 
-## health check
+## Health check
 
 - http://localhost:3000/health
 
-## run on local dev
+## Run on local dev
 
 - npm run start:dev
 

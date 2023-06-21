@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/atm/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/atm/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/atm",
+  "projects": {
+    "atm": {
+      "type": "application",
+      "root": "apps/atm",
+      "entryFile": "main",
+      "sourceRoot": "apps/atm/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/atm/tsconfig.app.json"
+      }
+    }
+  }
+}

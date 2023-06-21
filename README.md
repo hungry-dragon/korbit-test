@@ -1,7 +1,7 @@
 ## Development Environment
 
-- Node.js 18.x
-- npm 9.x
+- Node.js >=18.16.0
+- npm >=9.7.1
 - typeorm
 - sqlite3
 - swagger

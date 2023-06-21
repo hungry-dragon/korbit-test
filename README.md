@@ -1,7 +1,10 @@
 ## Development Environment
 
+- OS: Testing on Linux & macOS
+- Language: Typescript
 - Node.js >=18.16.0
 - npm >=9.7.1
+- Based on NestJS
 - typeorm
 - sqlite3
 - swagger

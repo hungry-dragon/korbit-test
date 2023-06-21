@@ -8,7 +8,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { PostWalletCommand } from './wallet.dto';
+import { PostWalletCommand, WalletDto } from './wallet.dto';
 import { WalletService } from './wallet.service';
 import { WalletEntiry } from '../entity/Wallet.entity';
 
@@ -22,7 +22,7 @@ export class WalletController {
   @ApiResponse({
     status: 200,
     description: 'return a wallet',
-    type: WalletEntiry,
+    type: WalletDto,
   })
   @ApiResponse({
     status: 404,
@@ -40,10 +40,10 @@ export class WalletController {
   @Get(':walletId')
   async getWallet(@Param('walletId', ParseUUIDPipe) walletId: string) {
     const wallet = await this.walletService.findOne(walletId);
-    if (wallet) {
-      return this.walletService.findOne(walletId);
+    if (!wallet) {
+      throw new NotFoundException('no data');
     }
-    throw new NotFoundException('no data');
+    return wallet;
   }
 
   @ApiOperation({
